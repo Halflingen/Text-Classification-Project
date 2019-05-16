@@ -17,3 +17,6 @@ The dataset consists of a training set of 5500 data samples and a test set of
 ## Model Training
 The model training contains the implementation of the training of SVM, Naive
 Bayes, CNN and RNN.
+
+## Work
+Contains the Thesis and a paper submitted to the CBMI 2019 confrance
