@@ -1,4 +1,4 @@
-The dataset contains five classes:
+The dataset contains eight classes:
 0: Ignore (663)
 1: Goal/Assist (1117)
 2: Transfer (887)
