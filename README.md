@@ -1,7 +1,10 @@
-# Application
+# Text Classification Project
+Master thesis by Aanund Nordskog
 
-# Data Collector
+## Application
 
-# Dataset
+## Data Collector
 
-# Model Training
+## Dataset
+
+## Model Training
