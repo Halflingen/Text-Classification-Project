@@ -156,9 +156,16 @@ class PlayerClassifier(APIView):
         label_num['Goal/Assist'] = '1'
         label_num['Transfer'] = '2'
         label_num['Quote'] = '3'
+        label_num['quote'] = '3'
         label_num['Irrelevant'] = '4'
+        label_num['irrelevant'] = '4'
         label_num['Ignore'] = '0'
         label_num['None'] = '9'
+        label_num['Player details'] = '9'
+        label_num['Club details'] = '9'
+        label_num['sjanse'] = '9'
+        label_num['Injuries'] = '9'
+        label_num['Rodt/gult kort'] = '9'
         if model_type == 'cnn' or model_type == 'rnn':
             tokenizer_name = "backend/ml_models/tokenizer_"+model_type+".pickle"
             model_name = "backend/ml_models/model_"+model_type+".h5"

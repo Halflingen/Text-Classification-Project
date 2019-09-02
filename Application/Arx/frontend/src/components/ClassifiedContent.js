@@ -42,7 +42,7 @@ class ClassifiedContent extends Component {
         </Typography>
       :
         <Typography
-          style={{fontSize:16, color:'red'}}
+          style={{fontSize:16, color:'black'}}
           paragraph={true}
         >
             {obj.content}
