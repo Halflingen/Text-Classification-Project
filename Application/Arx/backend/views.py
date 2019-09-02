@@ -213,7 +213,7 @@ class PlayerClassifier(APIView):
                 if para['class_field'] == None:
                     class_label.append('None')
                     continue
-                paragraphs.append(para['content'])
+                #paragraphs.append(para['content'])
                 class_label.append(para['class_field'])
 
         res = self.predict_paragraphs(paragraphs,class_label, model_type)
