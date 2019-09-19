@@ -24,8 +24,10 @@ SECRET_KEY = '=91&dif8y*=@7%8k91+5)ipvde@um+h__9x7rmme(_^qz&x(bb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+DOCKER = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+if DEBUG:
+    ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -78,14 +80,24 @@ WSGI_APPLICATION = 'arx.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'master_arx',
-        'USER': 'aanund',
-    }
-}
+if DOCKER:
+    DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.postgresql',
+                'NAME': 'postgres',
+                'USER': 'postgres',
+                'HOST': 'db',
+                'PORT': 5432,
+                }
+            }
+else:
+    DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.postgresql',
+                'NAME': 'master_arx',
+                'USER': 'aanund',
+                }
+            }
 
 
 # Password validation
