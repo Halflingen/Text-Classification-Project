@@ -203,6 +203,8 @@ class PlayerClassifier(APIView):
         for x in paragraphs:
             if x['total'] < 2: continue
             ids.append(x['article_id'])
+        if (len(ids) == 0):
+            return Response(status=status.HTTP_204_NO_CONTENT)
         paragraphs = []
         class_label = []
         for id_ in ids:
@@ -210,7 +212,7 @@ class PlayerClassifier(APIView):
             serializer = ArticleContentSerializer(article, many=True)
             for para in serializer.data:
                 paragraphs.append(para['content'])
-                if para['class_field'] == None:
+                if para['class_field'] == '':
                     class_label.append('None')
                     continue
                 #paragraphs.append(para['content'])
