@@ -41,7 +41,7 @@ class ListArticles(APIView):
 
     def get(self, request, format=None):
         articles = Article_info.objects.exclude(headline='na').exclude(classified=True)\
-        .order_by('?')[:50]
+        .order_by('-published')
         serializer = Article_info_serializer(articles, many=True)
         return Response(serializer.data)
 
@@ -107,7 +107,7 @@ class FastClassify(APIView):
     permission_classes = (IsAuthenticated,)
 
     def get(self, request, id_, format=None):
-        article = Article_content.objects.filter(class_field=None).filter(content__search=id_)\
+        article = Article_content.objects.filter(content__search=id_)\
         .order_by('content_order')
         serializer = ArticleContentSerializer(article, many=True)
         return Response(serializer.data)
