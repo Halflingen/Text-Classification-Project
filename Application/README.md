@@ -17,3 +17,12 @@ the Data folder
 
 how to delete docker images
 https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
+
+# Further Development
+## Backend
+Run docker-compose up and start programming.
+
+## Frontend
+It is the backend that hosts the react frontend. So to further develop the frontend run the command
+npm run dev, when you have changed some code, and place the main.js file insid Arx/frontend/static/frontend
+and then run docker-compose up.
